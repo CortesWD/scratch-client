@@ -15,7 +15,7 @@ function NavBar(): JSX.Element {
           <div>
             <MdSearch />
             <InputBase
-              placeholder="Search..."
+              placeholder="Search by album name..."
               inputProps={{ "aria-label": "search" }}
             />
           </div>

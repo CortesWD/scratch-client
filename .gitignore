@@ -180,6 +180,8 @@ dist
 **/*.back.*
 
 node_modules
+.env
+.env.*
 
 *.sublime*
 
