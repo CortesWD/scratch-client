@@ -24,7 +24,6 @@ function Router(): JSX.Element {
               element={<Component {...rest} />}
             />
           )
-
         })}
       </Routes>
     </BrowserRouter>
