@@ -1,10 +1,11 @@
-/*
- * Dependencies
- */
+import { Typography } from "@mui/material";
+
 function Home(): JSX.Element {
 
   return (
-    <h1>Hello world</h1>
+    <Typography variant="h4">
+      Search your vinyls...
+    </Typography>
   )
 }
 
