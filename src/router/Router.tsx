@@ -1,5 +1,12 @@
+/*
+ * Dependencies
+ */
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { uid } from "uid";
+
+/*
+ * Pages
+ */
 import pages from './../pages';
 
 // React.FC<{}>

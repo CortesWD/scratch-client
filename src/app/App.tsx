@@ -1,3 +1,6 @@
+/*
+ * Dependencies
+ */
 import { StyledEngineProvider } from '@mui/material/styles';
 
 import Router from '../router/Router';

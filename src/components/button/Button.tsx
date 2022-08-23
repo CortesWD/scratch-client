@@ -1,3 +1,6 @@
+/*
+ * Dependencies
+ */
 import MuiButton from '@mui/material/Button';
 import btnStyles from './Button.module.scss';
 

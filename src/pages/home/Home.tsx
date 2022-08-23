@@ -1,3 +1,6 @@
+/*
+ * Dependencies
+ */
 function Home(): JSX.Element {
 
   return (
