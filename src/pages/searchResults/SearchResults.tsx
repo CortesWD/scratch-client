@@ -24,6 +24,18 @@ function SearchResults(): JSX.Element {
   const { inputSearch } = store;
   const { albums, loading } = useSearchAlbums((inputSearch || search) ?? 'AC/DC');
 
+
+  useEffect(() => {
+    if (search?.length && !inputSearch.length) {
+      setStore((prevStore: Store) => {
+        return {
+          ...prevStore,
+          inputSearch: search
+        }
+      });
+    }
+  }, []);
+
   return (
     <>
       {!loading && albums.map((album) => {
