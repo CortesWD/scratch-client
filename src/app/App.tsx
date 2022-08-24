@@ -15,12 +15,15 @@ import client from '../graphql/client';
  * Styles
  */
 import './../scss/index.scss';
+import { AppProvider } from '../context/AppContext';
 
 function App() {
   return (
     <StyledEngineProvider injectFirst>
       <ApolloProvider client={client}>
-        <Router />
+        <AppProvider>
+          <Router />
+        </AppProvider>
       </ApolloProvider>
     </StyledEngineProvider>
   )

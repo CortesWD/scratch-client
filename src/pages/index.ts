@@ -1,12 +1,25 @@
+/*
+ * Pages
+ */
+import Home from "./home/Home";
+import SearchResults from "./searchResults/SearchResults";
+
+/*
+ * Others
+ */
 import { RouterElement } from "../models/router";
 import { URLS } from "../utils/constants";
-import Home from "./home/Home";
 
-
-const routes: RouterElement[] = [{
-  path: URLS.home,
-  component: Home,
-}];
+const routes: RouterElement[] = [
+  {
+    path: URLS.home,
+    component: Home,
+  },
+  {
+    path:  `${URLS.search}/:search`,
+    component: SearchResults,
+  },
+];
 
 
 export default routes;

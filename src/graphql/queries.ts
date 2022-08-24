@@ -13,3 +13,17 @@ export const ALBUMS_QUERY = gql`
     }
   }
 `;
+
+// export const CLIENT_ALBUMS_QUERY = gql`
+//   query GetAlbums($input: GetAlbumsResults!) {
+//       albums(input: $input) @client {
+//         id
+//         title
+//         image
+//         artist {
+//           name
+//           id
+//         }
+//       }
+//     }
+// `;

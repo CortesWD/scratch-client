@@ -1,10 +1,21 @@
+/*
+ * Dependencies
+ */
+import { useContext, useEffect, useState } from "react";
 import { Typography } from "@mui/material";
 
-function Home(): JSX.Element {
+/*
+ * Others
+ */
+import { AppContext, StoreContext } from "../../context/AppContext";
+import { useClientSearchAlbums } from "../../graphql/hooks";
 
+
+
+function Home(): JSX.Element {
   return (
     <Typography variant="h4">
-      Search your vinyls...
+      Search Your vinyls
     </Typography>
   )
 }

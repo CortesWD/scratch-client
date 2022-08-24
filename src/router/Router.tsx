@@ -11,10 +11,6 @@ import { uid } from "uid";
  * Components
  */
 import NavBar from "../components/navBar/NavBar";
-
-/*
- * Pages
- */
 import pages from './../pages';
 
 // React.FC<{}>

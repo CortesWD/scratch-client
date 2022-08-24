@@ -1,7 +1,7 @@
 /*
  * Dependencies
  */
-import { useQuery } from "@apollo/client";
+import { useLazyQuery, useQuery } from "@apollo/client";
 
 /*
 * Queries
@@ -13,21 +13,29 @@ import { ALBUMS_QUERY } from "./queries";
 */
 import { Album } from "../models/graphql";
 
-interface AlbumsResult { album: Album[] };
+interface AlbumsResult { albums: Album[] };
 
-interface AlbumsVars { query: string };
-
-
-export function useAlbums(query: string) {
-  const { data, loading, error } = useQuery<AlbumsResult, AlbumsVars>(ALBUMS_QUERY, {
-    variables: { query }
-  });
-
-  console.log(data?.album, loading, error);
+export function useLazySearchAlbums() {
+  const [getAlbums, { loading, error, data }] = useLazyQuery<AlbumsResult>(ALBUMS_QUERY);
 
   return {
-    albums: data?.album,
+    getAlbums,
     loading,
-    error
+    error,
+    albums: data?.albums ?? []
+  }
+};
+
+export function useSearchAlbums(query: string) {
+  const {loading, error, data } = useQuery<AlbumsResult>(ALBUMS_QUERY, {
+    variables: {
+      input: { query }
+    }
+  });
+
+  return {
+    loading,
+    error,
+    albums: data?.albums ?? []
   }
 };
