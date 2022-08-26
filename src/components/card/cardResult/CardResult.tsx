@@ -11,11 +11,9 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md';
+import { MdCheckBoxOutlineBlank, MdCheckBox, MdRemoveRedEye } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import CardActions from '@mui/material/CardActions';
-
-// import Fade from '@mui/material/Fade';
 
 /*
  * Others
@@ -23,13 +21,12 @@ import CardActions from '@mui/material/CardActions';
 import { Album } from '../../../models/graphql';
 
 import cardStyles from './CardResult.module.scss';
-import { Button } from '@mui/material';
 
 interface Props extends Album {
   style: {
     [key: string]: SpringValue
   },
-  axisX: number,
+  axisX?: number,
   url: string
 }
 
@@ -41,12 +38,12 @@ function CardResult({
 }: Props): JSX.Element {
   return (
     <Card sx={{ display: 'flex' }} className={cardStyles['card-result-container']}>
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+      <Box className={cardStyles['card-result-text-container']} sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="h5" variant="h5">
+          <Typography component="h6" variant="h6">
             {title}
           </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
+          <Typography variant="subtitle1" color="text.secondary" component="span">
             {artist?.name}
           </Typography>
         </CardContent>
@@ -58,18 +55,20 @@ function CardResult({
                 label="Add to collection"
               />
             </FormGroup>
-            <Button component={Link} to={url}>
-              View Details
-            </Button>
           </CardActions>
         </Box>
       </Box>
-      <CardMedia
-        className={cardStyles['card-result-img']}
-        component="img"
-        image={image}
-        alt={title}
-      />
+      <div className={cardStyles['card-result-img-container']}>
+        <IconButton className={cardStyles['card-result-view-icon']} component={Link} to={url}>
+          <MdRemoveRedEye />
+        </IconButton>
+        <CardMedia
+          className={cardStyles['card-result-img']}
+          component="img"
+          image={image}
+          alt={title}
+        />
+      </div>
     </Card>
   );
 }

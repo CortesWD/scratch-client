@@ -9,6 +9,30 @@
   margin: 8px auto 16px;
 }
 
-.card-result-img {
+.card-result-img-container {
+  display: flex;
   max-width: 49%;
+  position: relative;
+}
+
+.card-result-view-icon{
+  background-color: rgba($cream-1, 0.25);
+  color: $dark-blue-1;
+  height: 40px;
+  right: 8px;
+  position: absolute;
+  top: 8px;
+  width: 40px;
+  z-index: 100;
+
+  &:hover {
+    background-color: rgba($cream-1, 0.35);
+  }
+}
+
+
+.card-result-text-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 51%;
 }
