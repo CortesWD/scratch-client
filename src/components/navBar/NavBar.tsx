@@ -1,7 +1,7 @@
 /*
  * Dependencies
  */
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -16,6 +16,11 @@ import { useNavigate } from "react-router-dom";
 import { AppContext, Store } from "../../context/AppContext";
 import { useLazySearchAlbums } from "../../graphql/hooks";
 import { URLS } from "../../utils/constants";
+
+/*
+ * Styles
+ */
+import navBarStyles from './NavBar.module.scss';
 
 function NavBar(): JSX.Element {
   const navigate = useNavigate();
@@ -42,10 +47,11 @@ function NavBar(): JSX.Element {
 
   return (
     <Box>
-      <AppBar position="sticky">
+      <AppBar position="sticky" color="primary">
         <Toolbar>
-          <div>
+          <div className={navBarStyles['navbar-input-container']}>
             <InputBase
+              className={navBarStyles['navbar-input-container--field']}
               placeholder="Search by album name..."
               inputProps={{ "aria-label": "search" }}
               value={inputSearch}
