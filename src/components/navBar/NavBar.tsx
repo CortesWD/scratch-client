@@ -29,7 +29,7 @@ function NavBar(): JSX.Element {
 
   const handleClick = async (e: Event | any) => {
     if (inputSearch.trim().length > 6) {
-      await getAlbums({ variables: { input: { query: inputSearch } } });
+      await getAlbums({ variables: { input: { query: encodeURI(inputSearch) } } });
       navigate(`${URLS.search}/${inputSearch}`);
     }
   };
