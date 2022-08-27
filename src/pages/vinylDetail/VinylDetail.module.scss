@@ -1,0 +1,60 @@
+@import './../../scss/colors';
+
+$img-border-radius: 8px 8px 0 8px;
+
+.vinyl-detail-header {
+  background-image: var(--bgImg);
+  background-size: cover;
+  position: relative;
+  padding-bottom: 42.57%;
+  margin-bottom: 92px;
+
+  &::before {
+    backdrop-filter: blur(8px);
+    background-color: var(--colorTheme);
+    bottom: 0;
+    content: "";
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+}
+
+.vinyl-detail-header-card {
+  background-color: white;
+  border-radius: 8px;
+  bottom: -72px;
+  box-shadow: $base-shadow;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  left: 5%;
+  min-height: 100px;
+  position: absolute;
+  width: 90%;
+  z-index: 1;
+
+  figure {
+    border-radius: $img-border-radius;
+    bottom: 0;
+    box-shadow: $base-shadow;
+    left: 0;
+    margin: 0;
+    max-width: 40%;
+    position: absolute;
+
+    img {
+      border-radius: $img-border-radius;
+      display: block;
+      width: 100%;
+    }
+  }
+
+  div {
+    flex-basis: 55%;
+    
+  }
+}

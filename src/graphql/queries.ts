@@ -6,10 +6,33 @@ export const ALBUMS_QUERY = gql`
       id
       title
       image
+    }
+  }
+`;
+
+export const ALBUM_QUERY = gql`
+  query Album($input: GetAlbum) {
+    album(input: $input) {
+      title
+      genre
+      year
+      image
       artist {
-        name
         id
+        name
+        description
+        image
+        albums {
+          title
+          id
+        }
       }
+      trackList {
+        title
+        duration
+        position
+      }
+      country
     }
   }
 `;

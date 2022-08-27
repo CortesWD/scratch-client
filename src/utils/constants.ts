@@ -3,3 +3,5 @@ export const URLS = {
   search: '/search',
   vinylDetail: 'vinyl-detail'
 };
+
+export const SIDES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];

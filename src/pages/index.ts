@@ -3,6 +3,7 @@
  */
 import Home from "./home/Home";
 import SearchResults from "./searchResults/SearchResults";
+import VinylDetail from "./vinylDetail/VinylDetail";
 
 /*
  * Others
@@ -18,6 +19,10 @@ const routes: RouterElement[] = [
   {
     path:  `${URLS.search}/:search`,
     component: SearchResults,
+  },
+  {
+    path:  `${URLS.vinylDetail}/:id`,
+    component: VinylDetail
   },
 ];
 

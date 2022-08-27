@@ -3,6 +3,7 @@
  */
 // import { useSpring, animated, SpringValue } from 'react-spring'
 import { SpringValue } from 'react-spring';
+import { Link } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
@@ -12,7 +13,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { MdCheckBoxOutlineBlank, MdCheckBox, MdRemoveRedEye } from 'react-icons/md';
-import { Link } from 'react-router-dom';
 import CardActions from '@mui/material/CardActions';
 
 /*
@@ -23,7 +23,7 @@ import { Album } from '../../../models/graphql';
 import cardStyles from './CardResult.module.scss';
 
 interface Props extends Album {
-  style: {
+  style?: {
     [key: string]: SpringValue
   },
   axisX?: number,

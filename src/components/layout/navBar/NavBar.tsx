@@ -13,9 +13,9 @@ import { useNavigate } from "react-router-dom";
 /*
  * Other
  */
-import { AppContext, Store } from "../../context/AppContext";
-import { useLazySearchAlbums } from "../../graphql/hooks";
-import { URLS } from "../../utils/constants";
+import { AppContext, Store } from "../../../context/AppContext";
+import { useLazySearchAlbums } from "../../../graphql/hooks";
+import { URLS } from "../../../utils/constants";
 
 /*
  * Styles

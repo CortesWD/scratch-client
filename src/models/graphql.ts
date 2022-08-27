@@ -15,6 +15,7 @@ export interface Artist {
   name: string;
   albums?: Album[];
   description?: string;
+  image?: string;
 }
 
 export interface TrackList {

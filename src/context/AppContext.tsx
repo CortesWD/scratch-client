@@ -13,20 +13,23 @@ interface AppProvider {
 }
 
 export interface Store {
-  inputSearch: string
-  loading: boolean,
-  error?: string
+  inputSearch: string;
+  loading: boolean;
+  error?: string;
+  showNavBar: boolean;
 }
 
 export interface StoreContext {
-  store: Store,
-  setStore: (param: any) => void
+  store: Store;
+  setStore: (param: any) => void;
 }
 
 const initStore: Store = {
   loading: false,
-  inputSearch: ''
+  inputSearch: '',
+  showNavBar: true
 }
+
 /**
  * Context
  */

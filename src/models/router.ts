@@ -4,4 +4,5 @@ export interface RouterElement {
   component: React.ElementType;
   routeClassName?: string;
   isPrivate?: boolean;
+  withPaper?: boolean;
 }
