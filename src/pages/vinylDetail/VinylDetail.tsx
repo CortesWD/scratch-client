@@ -2,31 +2,33 @@
  * Dependencies
  */
 import { memo, useContext, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Typography from '@mui/material/Typography';
-import Container from "@mui/material/Container";
-import Divider from "@mui/material/Divider";
 
-import Paper from "@mui/material/Paper";
-import { uid } from 'uid';
+/*
+ * Components
+ */
+import VinylTrackList from "./components/vinylTrackList/VinylTrackList";
+import VinylArtist from "./components/vinylArtist/VinylArtist";
 
 /*
  * Others
  */
 import { useAlbum } from "../../graphql/hooks";
 import { colorGenerator } from "../../utils/utils";
+import { AppContext, Store } from "../../context/AppContext";
 
 /*
  * Styles
  */
 import vinylStyles from "./VinylDetail.module.scss";
-import { album } from "../../__mocks/mocks";
-import { AppContext, Store } from "../../context/AppContext";
+// import { album } from "../../__mocks/mocks";
+
 
 function VinylDetail(): JSX.Element | null {
   const { id = '' } = useParams<{ id: string }>();
   const { store, setStore } = useContext(AppContext);
-  // const { album, loading } = useAlbum(id);
+  const { album, loading } = useAlbum(id);
   const navigate = useNavigate();
   const colorTheme = colorGenerator();
 
@@ -36,7 +38,6 @@ function VinylDetail(): JSX.Element | null {
     artist,
     year,
     genre,
-    // format?: string[];
     trackList,
   } = album || {};
 
@@ -71,7 +72,7 @@ function VinylDetail(): JSX.Element | null {
             <img src={image} alt={title} />
           </figure>
           <div>
-            <Typography component="h1" variant="body1">
+            <Typography component="h1" variant="subtitle1">
               {title}
             </Typography>
             <Typography component="p" variant="body2">
@@ -83,32 +84,12 @@ function VinylDetail(): JSX.Element | null {
           </div>
         </div>
       </header>
-      <Container>
-        <Paper elevation={1}>
-          <Typography component="h2" variant="h5">
-            Tracklist
-          </Typography>
-          <ul>
-            {trackList?.map((track) => {
-              return (
-                <li key={uid()}>
-                  {track.title}
-                </li>
-              )
-            })}
-          </ul>
-        </Paper>
-      </Container>
-      <Container>
-        <Paper elevation={1}>
-          <Typography component="h2" variant="h5">
-            More About 
-            <Link to={artist?.id}>
-              {artist?.name}
-            </Link>
-          </Typography>
-        </Paper>
-      </Container>
+      {trackList.length ? (
+        <VinylTrackList trackList={trackList} />
+      ) : null}
+      {artist && artist.id && (
+        <VinylArtist artist={artist} />
+      )}
     </main>
   );
 }

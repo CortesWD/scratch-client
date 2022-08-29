@@ -1,3 +1,4 @@
+import { SIDES } from "../utils/constants";
 export interface Album {
   id: number;
   title: string;
@@ -22,4 +23,9 @@ export interface TrackList {
   title: string;
   duration: string;
   position: string;
+}
+export interface OrderedTrackList {
+  side: (typeof SIDES)[number];
+  tracks: TrackList[];
+  lpNumber?: number;
 }

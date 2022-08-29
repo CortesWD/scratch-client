@@ -11,7 +11,7 @@ import { ALBUMS_QUERY, ALBUM_QUERY } from "./queries";
 /*
 * Others
 */
-import { Album } from "../models/graphql";
+import { Album, OrderedTrackList } from "../models/graphql";
 import { SIDES } from "../utils/constants";
 
 interface AlbumsResult { albums: Album[] };
@@ -49,13 +49,28 @@ export function useAlbum(id: string) {
     }
   });
 
-  const aSide = data?.album?.trackList?.filter((e) => e.position.charAt(0) === SIDES[0]);
-  const bSide = data?.album?.trackList?.filter((e) => e.position.charAt(0) === SIDES[1]);
+  const trackList: OrderedTrackList[] = [];
+  let lpNumber = 1;
+
+  SIDES.forEach((side, i) => {
+    if (i % 2 === 0 && i > 0) lpNumber += 1;
+    if (data?.album?.trackList?.length) {
+      const newSide = data?.album?.trackList.filter((e) => e.position.charAt(0) === side);
+
+      if (newSide.length) {
+        trackList.push({
+          side,
+          lpNumber,
+          tracks: newSide
+        });
+      }
+    }
+  });
 
   return {
     album: {
       ...data?.album,
-      trackList: [aSide, bSide]
+      trackList,
     } ?? { id: 0, image: '', title: '' },
     loading,
     error,

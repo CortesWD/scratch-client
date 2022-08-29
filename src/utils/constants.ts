@@ -4,4 +4,4 @@ export const URLS = {
   vinylDetail: 'vinyl-detail'
 };
 
-export const SIDES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
+export const SIDES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'] as const;

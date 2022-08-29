@@ -1,0 +1,28 @@
+@import './../../../../scss/colors';
+
+.vinyl-tracklist-table {
+  tr:nth-child(odd) {
+    background-color: $white-1;
+  }
+
+  tr:last-child {
+    td {
+      border: none;
+    }
+  }
+}
+
+.vinyl-track-list-counter {
+  border-radius: 100%;
+  border: 2px solid $dark-blue-4;
+  color: $dark-blue-4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  line-height: 1;
+  padding: 2px;
+  text-align: center;
+  font-weight: bold;
+  width: 24px;
+}
