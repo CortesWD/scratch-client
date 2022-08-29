@@ -23,7 +23,7 @@ import SectionLayout from '../../../../components/layout/sectionLayout/SectionLa
 import { OrderedTrackList } from '../../../../models/graphql';
 
 /*
- * Others
+ * Styles
  */
 import styles from './VinylTrackList.module.scss';
 

@@ -25,6 +25,7 @@ export const ALBUM_QUERY = gql`
         albums {
           title
           id
+          image
         }
       }
       trackList {

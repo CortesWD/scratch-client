@@ -2,6 +2,9 @@
  * Dependencies
  */
 import { Link } from 'react-router-dom';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { uid } from 'uid';
 
 /*
@@ -13,6 +16,7 @@ import SectionLayout from '../../../../components/layout/sectionLayout/SectionLa
  * Others
  */
 import { Artist } from '../../../../models/graphql';
+import { Typography } from '@mui/material';
 
 interface Props {
   artist: Artist
@@ -30,7 +34,34 @@ function VinylArtist({ artist }: Props): JSX.Element {
 
   return (
     <SectionLayout title={<Title />}>
-      hola
+      <>
+        {artist.albums &&
+          <>
+            <Typography component="h2" variant="body2">
+              Other albums:
+            </Typography>
+
+            <ImageList sx={{ width: 350 }}>
+              {artist.albums.map((album) => {
+                return (
+                  <ImageListItem key={uid()}>
+                    <img
+                      src={album.image}
+                      alt={album.title}
+                      loading="lazy"
+                    />
+                    <ImageListItemBar
+                      title={album.title}
+                      subtitle={<span>by: {artist.name}</span>}
+                      position="below"
+                    />
+                  </ImageListItem>
+                )
+              })}
+            </ImageList>
+          </>
+        }
+      </>
     </SectionLayout>
   )
 }
