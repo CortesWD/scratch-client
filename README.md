@@ -3,10 +3,10 @@ This is a personal project in order to explorer the graphQL and Apollo/Client sp
 
 ### TODO
 - [x] Create base arquetype
-- [ ] Install MUI
+- [X] Install MUI
 - [ ] Design UI
-- [ ] Install and instantiate Apollo to Server
-- [ ] Connect to GraphQL MW (scratch-server)
+- [X] Install and instantiate Apollo to Server
+- [X] Connect to GraphQL MW (scratch-server)
 - [ ] Define hook queries/mutations 
 - [ ] Create Login Layout
 - [ ] Create lib layout
