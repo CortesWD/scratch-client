@@ -30,7 +30,7 @@ function VinylDetail() {
   const { store, setStore } = useContext(AppContext);
   const { album, loading } = useAlbum(id);
   const navigate = useNavigate();
-  const colorTheme = colorGenerator();
+  const colorTheme = colorGenerator(true);
 
   const {
     title,

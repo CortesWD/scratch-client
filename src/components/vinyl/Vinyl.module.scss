@@ -41,7 +41,7 @@
   z-index: 1;
 
   &::before {
-    background-color: red;
+    background-color: var(--labelColor);
     border-radius: 100%;
     border: 10px solid #282828;
     content: "";

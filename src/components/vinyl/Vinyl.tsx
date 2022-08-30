@@ -3,9 +3,19 @@
  */
 import vinylStyles from './Vinyl.module.scss';
 
-function Vinyl() {
+interface Props {
+  labelColor: string;
+  className?: string;
+}
+
+function Vinyl({labelColor, className = ''}: Props) {
+
+  const style = {
+    '--labelColor': labelColor ?? '#ff3'
+  } as React.CSSProperties;
+
   return (
-    <div className={vinylStyles['vinyl']} />
+    <div style={style} className={`${vinylStyles['vinyl']} ${className}`} />
   )
 }
 
