@@ -12,7 +12,7 @@ interface Props {
   className?: string;
 }
 
-function SectionLayout({ className, title, children }: Props): JSX.Element {
+function SectionLayout({ className, title, children }: Props) {
   return (
     <Container className={className}>
       <Typography component="h2" variant="h5">

@@ -25,7 +25,7 @@ import vinylStyles from "./VinylDetail.module.scss";
 // import { album } from "../../__mocks/mocks";
 
 
-function VinylDetail(): JSX.Element | null {
+function VinylDetail() {
   const { id = '' } = useParams<{ id: string }>();
   const { store, setStore } = useContext(AppContext);
   const { album, loading } = useAlbum(id);

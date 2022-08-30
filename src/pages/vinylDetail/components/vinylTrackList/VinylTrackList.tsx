@@ -31,7 +31,7 @@ interface Props {
   trackList: OrderedTrackList[]
 }
 
-function VinylTrackList({ trackList }: Props): JSX.Element {
+function VinylTrackList({ trackList }: Props) {
   const [value, setValue] = useState<number>(0);
 
   const handleChange = (_: React.SyntheticEvent, newValue: number) => {

@@ -29,7 +29,7 @@ interface Props {
   artist: Artist
 }
 
-function VinylArtist({ artist }: Props): JSX.Element {
+function VinylArtist({ artist }: Props) {
 
   const Title = () => (
     <>

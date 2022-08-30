@@ -17,7 +17,7 @@ import BaseLayout from "../components/layout/baseLayout/BaseLayout";
  */
 import { AppContext } from "../context/AppContext";
 
-function Router(): JSX.Element {
+function Router() {
   const { store: { showNavBar } } = useContext(AppContext);
 
   return (

@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
  * Others
  */
 
-function Home(): JSX.Element {
+function Home() {
   return (
     <Typography variant="h4">
       Search Your vinyls

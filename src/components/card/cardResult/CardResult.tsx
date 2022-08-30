@@ -35,7 +35,7 @@ function CardResult({
   image,
   artist,
   url = ''
-}: Props): JSX.Element {
+}: Props) {
   return (
     <Card sx={{ display: 'flex' }} className={cardStyles['card-result-container']}>
       <Box className={cardStyles['card-result-text-container']} sx={{ display: 'flex', flexDirection: 'column' }}>

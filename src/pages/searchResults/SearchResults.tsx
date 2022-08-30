@@ -17,7 +17,7 @@ import { AppContext, Store, StoreContext } from "../../context/AppContext";
 import { useSearchAlbums } from "../../graphql/hooks";
 import { URLS } from "../../utils/constants";
 
-function SearchResults(): JSX.Element {
+function SearchResults() {
   const { search } = useParams<{ search: string }>();
   const { store, setStore } = useContext<StoreContext>(AppContext);
   const { inputSearch } = store;

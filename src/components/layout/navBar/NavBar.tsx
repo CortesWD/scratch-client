@@ -22,7 +22,7 @@ import { URLS } from "../../../utils/constants";
  */
 import navBarStyles from './NavBar.module.scss';
 
-function NavBar(): JSX.Element {
+function NavBar(){
   const navigate = useNavigate();
   const { store: { inputSearch }, setStore } = useContext(AppContext);
   const { getAlbums } = useLazySearchAlbums();
