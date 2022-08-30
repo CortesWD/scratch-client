@@ -9,6 +9,7 @@ export interface Album {
   owned?: boolean;
   format?: string[];
   trackList?: TrackList[];
+  country?: string;
 }
 
 export interface Artist {

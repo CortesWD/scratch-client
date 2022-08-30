@@ -19,6 +19,8 @@ import './App.scss';
 
 import { AppProvider } from '../context/AppContext';
 
+const fontFamily = ['Montserrat', 'sans-serif'].join(',');
+
 const themeOptions = createTheme({
   palette: {
     mode: 'light',
@@ -37,6 +39,12 @@ const themeOptions = createTheme({
       paper: '#fff'
     }
   },
+  typography: {
+    h1: { fontFamily },
+    h2: { fontFamily },
+    subtitle1: { fontFamily },
+    subtitle2: { fontFamily }
+  }
 });
 
 function App() {

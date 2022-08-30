@@ -1,0 +1,41 @@
+@import './../../../../scss/colors';
+
+
+.vinyl-detail-header {
+  background-image: var(--bgImg);
+  background-size: cover;
+  padding-bottom: 42.57%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  &::before {
+    backdrop-filter: blur(8px);
+    background-color: var(--colorTheme);
+    bottom: 0;
+    content: "";
+    height: 100%;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+}
+
+.vinyl-detail-texts {
+  color: white;
+  text-shadow: 0px 2px 3px rgba($dark-blue-1, .5);
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  left: 0%;
+  top: 25%;
+  text-align: center;
+  z-index: 1;
+
+  h1 {
+    font-size: 26px;
+  }
+}

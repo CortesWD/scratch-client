@@ -1,0 +1,8 @@
+.vinyl-detail-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.vinyl-details-desc {
+  padding: 8px 4px;
+}

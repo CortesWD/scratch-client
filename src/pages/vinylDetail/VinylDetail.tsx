@@ -3,13 +3,14 @@
  */
 import { memo, useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Typography from '@mui/material/Typography';
+
 
 /*
  * Components
  */
 import VinylTrackList from "./components/vinylTrackList/VinylTrackList";
 import VinylArtist from "./components/vinylArtist/VinylArtist";
+import VinylHeader from "./components/vinylHeader/VinylHeader";
 
 /*
  * Others
@@ -22,8 +23,7 @@ import { AppContext, Store } from "../../context/AppContext";
  * Styles
  */
 import vinylStyles from "./VinylDetail.module.scss";
-// import { album } from "../../__mocks/mocks";
-
+import VinylDescription from "./components/vinylDescription/VinylDescription";
 
 function VinylDetail() {
   const { id = '' } = useParams<{ id: string }>();
@@ -39,6 +39,7 @@ function VinylDetail() {
     year,
     genre,
     trackList,
+    country
   } = album || {};
 
   useEffect(() => {
@@ -54,43 +55,39 @@ function VinylDetail() {
     '--colorTheme': colorTheme
   } as React.CSSProperties;
 
-  const style = {
-    '--bgImg': `url(${artist?.image})`
-  } as React.CSSProperties;
-
   return (
     <main
       style={mainStyle}
       className={vinylStyles['vinyl-detail-main']}
     >
-      <header
-        style={style}
-        className={vinylStyles['vinyl-detail-header']}
-      >
-        <div className={vinylStyles['vinyl-detail-header-card']}>
+      <VinylHeader
+        title={title ?? ''}
+        artist={artist}
+      />
+      <div className={vinylStyles['vinyl-detail-container']}>
+        <div className={vinylStyles['vinyl-detail-cover']}>
           <figure>
             <img src={image} alt={title} />
           </figure>
-          <div>
-            <Typography component="h1" variant="subtitle1">
-              {title}
-            </Typography>
-            <Typography component="p" variant="body2">
-              Artist: {artist?.name}
-            </Typography>
-            <Typography component="p" variant="body2">
-              Released: {year}
-            </Typography>
-          </div>
         </div>
-      </header>
-      {trackList.length ? (
-        <VinylTrackList trackList={trackList} />
-      ) : null}
-      {artist && artist.id && (
-        <VinylArtist artist={artist} />
-      )}
-    </main>
+        <VinylDescription
+          artist={artist}
+          year={year}
+          country={country}
+          genre={genre}
+        />
+        {
+          trackList.length ? (
+            <VinylTrackList trackList={trackList} />
+          ) : null
+        }
+        {
+          artist && artist.id && (
+            <VinylArtist artist={artist} />
+          )
+        }
+      </div >
+    </main >
   );
 }
 

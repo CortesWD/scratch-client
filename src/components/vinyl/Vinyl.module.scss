@@ -1,38 +1,40 @@
+@import './../../scss/colors';
+
 .vinyl {
   background:
-
     // light 
-    conic-gradient(rgba(255, 255, 255, 0) 30deg, rgba(255, 255, 255, 0.25) 120deg,
-      rgba(255, 255, 255, 0.25) 120deg, rgba(255, 255, 255, 0) 210deg,
-      rgba(255, 255, 255, 0) 210deg, rgba(255, 255, 255, 0.25) 240deg,
-      rgba(255, 255, 255, 0.25) 270deg, rgba(255, 255, 255, 0) 360deg),
+    conic-gradient(rgba(255, 255, 255, 0) 30deg, rgba(255, 255, 255, .35) 120deg,
+      rgba(255, 255, 255, .35) 120deg, rgba(255, 255, 255, 0) 210deg,
+      rgba(255, 255, 255, 0) 210deg, rgba(255, 255, 255, .35) 240deg,
+      rgba(255, 255, 255, .35) 270deg, rgba(255, 255, 255, 0) 360deg),
 
     // Rings
     radial-gradient(circle,
-      #000000 0%,
+      black 0%,
 
-      #000000 36%,
-      #494949 36.5%,
-      #494949 37%,
-      #000000 37.5%,
+      black 36%,
+      $gray-2 36.5%,
+      $gray-2 37%,
+      black 37.5%,
 
-      #000000 46%,
-      #494949 46.5%,
-      #494949 47%,
-      #000000 47.5%,
+      black 46%,
+      $gray-2 46.5%,
+      $gray-2 47%,
+      black 47.5%,
 
-      #000000 62%,
-      #494949 62.5%,
-      #494949 63%,
-      #000000 63.5%,
+      black 62%,
+      $gray-2 62.5%,
+      $gray-2 63%,
+      black 63.5%,
 
-      #000000 74%,
-      #494949 74.5%,
-      #494949 75%,
-      #000000 75.5%,
+      black 74%,
+      $gray-2 74.5%,
+      $gray-2 75%,
+      black 75.5%,
 
 
-      #000000 100%);
+      black 100%);
+  background-blend-mode: lighten, normal;
   border: 10px solid #282828;
   border-radius: 100%;
   height: 400px;

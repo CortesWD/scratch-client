@@ -13,16 +13,16 @@
 }
 
 .vinyl-track-list-counter {
+  align-items: center;
   border-radius: 100%;
   border: 2px solid $dark-blue-4;
   color: $dark-blue-4;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  font-weight: bold;
   height: 24px;
+  justify-content: center;
   line-height: 1;
   padding: 2px;
   text-align: center;
-  font-weight: bold;
   width: 24px;
 }

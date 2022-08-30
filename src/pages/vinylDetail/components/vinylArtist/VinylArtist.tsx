@@ -63,7 +63,7 @@ function VinylArtist({ artist }: Props) {
                     />
                     <ImageListItemBar
                       className={styleArtist['vinyl-artist-image-bar']}
-                      title={<Link to={`${URLS.vinylDetail}/${album.id}`}>{album.title}</Link>}
+                      title={<Link to={`/${URLS.vinylDetail}/${album.id}`}>{album.title}</Link>}
                       subtitle={<span>by: {artist.name}</span>}
                     />
                   </ImageListItem>

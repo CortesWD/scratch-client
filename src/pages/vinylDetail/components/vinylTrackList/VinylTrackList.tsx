@@ -26,8 +26,6 @@ import { OrderedTrackList } from '../../../../models/graphql';
  * Styles
  */
 import vinylTrackStyles from './VinylTrackList.module.scss';
-import Vinyl from '../../../../components/vinyl/Vinyl';
-import { colorGenerator } from '../../../../utils/utils';
 
 interface Props {
   trackList: OrderedTrackList[]
@@ -42,7 +40,6 @@ function VinylTrackList({ trackList }: Props) {
 
   return (
     <SectionLayout title="Tracklist">
-      <Vinyl labelColor={colorGenerator()} />
       <Tabs
         value={value}
         onChange={handleChange}
