@@ -25,7 +25,7 @@ import { OrderedTrackList } from '../../../../models/graphql';
 /*
  * Styles
  */
-import styles from './VinylTrackList.module.scss';
+import vinylTrackStyles from './VinylTrackList.module.scss';
 
 interface Props {
   trackList: OrderedTrackList[]
@@ -54,14 +54,19 @@ function VinylTrackList({ trackList }: Props): JSX.Element {
       {trackList.map((list, i) => {
         return (
           <Fragment key={uid()}>
-            <TabPanel value={value} index={i}>
+            <TabPanel
+              value={value}
+              index={i}
+            >
               <TableContainer>
-                <Table className={styles['vinyl-tracklist-table']}>
+                <Table className={vinylTrackStyles['vinyl-tracklist-table']}>
                   <TableBody>
                     {list.tracks.map((track, i) => {
                       return (
                         <TableRow key={uid()}>
-                          <TableCell><span className={styles['vinyl-track-list-counter']}>{i + 1}</span></TableCell>
+                          <TableCell>
+                            <span className={vinylTrackStyles['vinyl-track-list-counter']}>{i + 1}</span>
+                          </TableCell>
                           <TableCell align="left">{track.title}</TableCell>
                           <TableCell align="right">{track.duration}</TableCell>
                         </TableRow>

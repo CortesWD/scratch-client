@@ -1,0 +1,26 @@
+@import './../../../../scss/colors';
+
+.vinyl-artist-container {
+  h2 {
+    padding: 4px 16px;
+  }
+}
+
+.vinyl-artist-images-container {
+  max-width: 100%;
+
+  li img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+}
+
+.vinyl-artist-image-bar {
+  a {
+    color: $cream-1;
+  }
+}
+
+.vinyl-artist-anchor {
+  color: $dark-blue-4;
+}

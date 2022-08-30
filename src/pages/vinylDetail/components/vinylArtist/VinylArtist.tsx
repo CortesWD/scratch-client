@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 import { uid } from 'uid';
 
 /*
@@ -16,17 +18,23 @@ import SectionLayout from '../../../../components/layout/sectionLayout/SectionLa
  * Others
  */
 import { Artist } from '../../../../models/graphql';
-import { Typography } from '@mui/material';
+import { URLS } from '../../../../utils/constants';
+
+/*
+ * Styles
+ */
+import styleArtist from './VinylArtist.module.scss';
 
 interface Props {
   artist: Artist
 }
 
 function VinylArtist({ artist }: Props): JSX.Element {
+
   const Title = () => (
     <>
       More About {" "}
-      <Link to={`/artist/${artist?.id}`}>
+      <Link className={styleArtist['vinyl-artist-anchor']} to={`/artist/${artist?.id}`}>
         {artist.name}
       </Link>
     </>
@@ -34,14 +42,17 @@ function VinylArtist({ artist }: Props): JSX.Element {
 
   return (
     <SectionLayout title={<Title />}>
-      <>
+      <Box className={styleArtist['vinyl-artist-container']}>
         {artist.albums &&
           <>
-            <Typography component="h2" variant="body2">
+            <Typography component="h2" variant="subtitle2">
               Other albums:
             </Typography>
-
-            <ImageList sx={{ width: 350 }}>
+            <ImageList
+              className={styleArtist['vinyl-artist-images-container']}
+              key="Subheader"
+              cols={2}
+            >
               {artist.albums.map((album) => {
                 return (
                   <ImageListItem key={uid()}>
@@ -51,9 +62,9 @@ function VinylArtist({ artist }: Props): JSX.Element {
                       loading="lazy"
                     />
                     <ImageListItemBar
-                      title={album.title}
+                      className={styleArtist['vinyl-artist-image-bar']}
+                      title={<Link to={`${URLS.vinylDetail}/${album.id}`}>{album.title}</Link>}
                       subtitle={<span>by: {artist.name}</span>}
-                      position="below"
                     />
                   </ImageListItem>
                 )
@@ -61,7 +72,7 @@ function VinylArtist({ artist }: Props): JSX.Element {
             </ImageList>
           </>
         }
-      </>
+      </Box>
     </SectionLayout>
   )
 }

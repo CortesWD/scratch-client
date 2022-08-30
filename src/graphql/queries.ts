@@ -20,7 +20,6 @@ export const ALBUM_QUERY = gql`
       artist {
         id
         name
-        description
         image
         albums {
           title
