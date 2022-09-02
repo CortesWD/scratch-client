@@ -46,7 +46,7 @@ function SearchResults() {
             artist={artist}
             image={image}
             id={id}
-            url={`/${URLS.vinylDetail}/${id}`}
+            url={`${URLS.vinylDetail}/${id}`}
           />
         )
       })}

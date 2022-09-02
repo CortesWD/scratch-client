@@ -3,6 +3,5 @@ export interface RouterElement {
   // component: Component<any> | JSX.Element | React.FC<any>;
   component: React.ElementType;
   routeClassName?: string;
-  isPrivate?: boolean;
   withPaper?: boolean;
 }
