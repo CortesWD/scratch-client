@@ -35,9 +35,9 @@ function Router() {
             <Route
               key={uid()}
               path={path}
-              element={sessionToken ? (
-                <BaseLayout withPaper={withPaper} ><Component {...rest} /></BaseLayout>
-              ) : (<Navigate to={URLS.login} replace />)
+              element={sessionToken ?
+                (<BaseLayout withPaper={withPaper} ><Component {...rest} /></BaseLayout>)
+                : (<Navigate to={URLS.login} replace />)
               }
             />
           )
